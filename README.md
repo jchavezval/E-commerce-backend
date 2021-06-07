@@ -18,7 +18,29 @@ I've refactored an e-commerce application that allows users to place their items
 <a href = "#installation"></a>
 
 ## Installation
-Install MySQL and node.js, then install node packages: express, sequelize, mysql2, dotenv.
+This application requires MySQL and node.js to run locally. You can connect to a MySQL database remotely as well.
+
+- Clone this repository to your machine. 
+- Navigate to the root directory in your terminal
+- Run the command ```npm i``` to install all dependencies
+- If you plan to run the application locally:
+  - run ```touch .env``` then:
+    - Open your .env file ```open .env``` and add the following variables to configure the connection to your MySQL database
+      ```
+        DB_NAME='ecommerce_db'
+        DB_USER='root'   <<< your MySQL username
+        DB_PW='secret'   <<< your MySQL password
+      ```
+  - On first use:
+    - Open the MySQL monitor (```npm run db```) -OR- (```mysql -u root -p```)
+      - Enter your MySQL password.
+      - To create your ecommerce_db database
+        - Run ```source db/schema.sql```
+      - Then run ```quit``` to leave the mySQL monitor 
+- If you would like to test the application with dummy data
+- Run ```npm run seed``` from the command line
+
+- Run ```npm start``` to start your server
 
 
 ## Usage
